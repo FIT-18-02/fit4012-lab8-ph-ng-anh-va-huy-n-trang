@@ -24,10 +24,11 @@ Xây dựng chương trình truyền dữ liệu an toàn qua socket bằng các
 
 ## 4. Kết quả minh chứng
 
-- Ảnh chụp màn hình Sender: TODO_SCREENSHOT_SENDER
-- Ảnh chụp màn hình Receiver: TODO_SCREENSHOT_RECEIVER
-- File log Sender: `logs/sender_success.log`
-- File log Receiver: `logs/receiver_success.log`
+## 4. Kết quả minh chứng
+
+- Sender gửi thành công packet chứa encrypted DES key, ciphertext và SHA-256 hash.
+- Receiver nhận packet, giải mã DES key bằng RSA private key và giải mã plaintext thành công.
+- SHA-256 hash sau khi kiểm tra trùng khớp với dữ liệu gốc, xác nhận dữ liệu không bị thay đổi trong quá trình truyền.
 
 ## 5. Nhận xét
 
