@@ -15,20 +15,20 @@ Lab 8 kế thừa cách tổ chức repo của Lab 6 socket starter, nhưng thay
 
 ## Team members
 
-- **Thành viên 1**: TODO_MEMBER_1 - MSSV: TODO_MEMBER_1_ID
-- **Thành viên 2**: TODO_MEMBER_2 - MSSV: TODO_MEMBER_2_ID
+- **Thành viên 1**: Dương Thị Huyền Trang - MSSV: 1871020579
+- **Thành viên 2**: Phạm Phương Anh  - MSSV: 1871020062
 
 ## Task division
 
-- **Thành viên 1 phụ trách chính**: TODO_ROLE_MEMBER_1
-- **Thành viên 2 phụ trách chính**: TODO_ROLE_MEMBER_2
-- **Phần làm chung**: TODO_SHARED_WORK
+- **Thành viên 1 phụ trách chính**:  Xây dựng module mã hóa DES-CBC, SHA-256, RSA-OAEP và xử lý packet trong ( 'secure_transfer_utils.py`).
+- **Thành viên 2 phụ trách chính**:  Xây dựng chương trình ( 'secure_transfer_utils.py`) socket communication, logging và kiểm thử hệ thống.
+- **Phần làm chung**:  Viết tài liệu README, kiểm thử CI/CD, sửa lỗi GitHub Actions và hoàn thiện báo cáo.
 
 ## Demo roles
 
-- **Demo Sender / mã hóa / log gửi**: TODO_DEMO_ROLE_1
-- **Demo Receiver / giải mã / kiểm tra hash**: TODO_DEMO_ROLE_2
-- **Cả hai cùng trả lời câu hỏi mở rộng AES và chữ ký số**: TODO_DEMO_ROLE_SHARED
+- **Demo Sender / mã hóa / log gửi**: Dương Thị Huyền Trang
+- **Demo Receiver / giải mã / kiểm tra hash**: Phạm Phương Anh
+- **Cả hai cùng trả lời câu hỏi mở rộng AES và chữ ký số**: Dương Thị Huyền Trang và Phạm Phương Anh
 
 ---
 
@@ -243,10 +243,11 @@ CI sẽ kiểm tra:
 
 DES có key hiệu dụng nhỏ nên không còn phù hợp cho hệ thống thật. Khi nâng cấp lên AES, sinh viên cần trả lời:
 
-- AES-128 dùng key bao nhiêu byte?
-- AES-256 dùng key bao nhiêu byte?
-- Nếu dùng AES-CBC, IV dài bao nhiêu byte?
-- Nếu dùng AES-GCM, vì sao GCM có thể giải quyết cả mã hóa và xác thực dữ liệu tốt hơn CBC + hash rời rạc?
+- AES-128 dùng key bao nhiêu byte??** Độ dài khóa phiên yêu cầu dài đúng **16 byte** (tương đương 128 bit).
+- AES-256 dùng key bao nhiêu byte?** Độ dài khóa phiên yêu cầu dài đúng **32 byte** (tương đương 256 bit).
+- Nếu dùng AES-CBC, IV dài bao nhiêu byte?** IV có độ dài 16 byte vì block size của AES là 128 bit.
+- Nếu dùng AES-GCM, vì sao GCM có thể giải quyết cả mã hóa và xác thực dữ liệu tốt hơn CBC + hash rời rạc?**  Chế độ GCM tạo authentication tag giúp phát hiện dữ liệu bị thay đổi mà không cần dùng thêm SHA-256 riêng như CBC. 
+  Điều này giúp hệ thống an toàn và hiệu quả hơn so với DES-CBC kết hợp hash rời rạc.
 
 ### Q2. Thêm chữ ký số
 
